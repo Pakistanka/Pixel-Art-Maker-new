@@ -1,28 +1,16 @@
-let FIELD_SIZE_X = 20;
-let FIELD_SIZE_Y = 20;
-
 // Select color input
 let colorPicker = $('#colorPicker');
-
-// Select size input
-let row = $('#input_width');
-  row.on('click', function(){
-    
-  });
-
-let cell = $('#input_height');
-  cell.on('click', function(){
-     
-  });
-
  
 let submitButton = $('#submit').on('click', function makeGrid() {
   
+  // clear the table before drawing rows and columns
   let drawTable = $('#pixel_canvas');
+  drawTable.empty();
 
-  for(let i = 0; i < FIELD_SIZE_X; i++){
+  // draw rows and columns
+  for(let i = 0; i < $('#input_height').val(); i++){
     createRow = '<tr>';
-    for(let j = 0; j < FIELD_SIZE_Y; j++){
+    for(let j = 0; j < $('#input_width').val(); j++){
       createRow += '<td>&nbsp;</td>';
     }
     createRow += '</tr>';
