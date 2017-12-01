@@ -16,26 +16,20 @@ let cell = $('#input_height');
   });
 
  
-  let submitButton = $('#submit').on('click', function makeGrid() {
-    
-    let drawTable = $('#pixel_canvas');
+let submitButton = $('#submit').on('click', function makeGrid() {
   
+  let drawTable = $('#pixel_canvas');
+
   for(let i = 0; i < FIELD_SIZE_X; i++){
-    let row = document.createElement('tr');
-    row.classList.add('draw-table-row');
-    row.classList.add('row-' + i);
-
+    createRow = '<tr>';
     for(let j = 0; j < FIELD_SIZE_Y; j++){
-      let cell = document.createElement('td');
-      cell.classList.add('game-table-cell');
-      cell.classList.add('row-' + i + '-' + j);
-
-      row.appendChild(cell);
+      createRow += '<td>&nbsp;</td>';
     }
-    drawTable.appendChild(row);
+    createRow += '</tr>';
+    drawTable.append(createRow);
   }
-  document.getElementById('#sizePicker').appendChild(drawTable)
-  })
+
+})
 
 
 //function makeGrid()
