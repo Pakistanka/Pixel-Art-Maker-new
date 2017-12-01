@@ -20,7 +20,7 @@ let cell = $('#input_height');
     
     let drawTable = $('#pixel_canvas');
   
-  for(let i = o; i < FIELD_SIZE_X; i++){
+  for(let i = 0; i < FIELD_SIZE_X; i++){
     let row = document.createElement('tr');
     row.classList.add('draw-table-row');
     row.classList.add('row-' + i);
