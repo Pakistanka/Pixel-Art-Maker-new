@@ -2,11 +2,7 @@ let FIELD_SIZE_X = 20;
 let FIELD_SIZE_Y = 20;
 
 // Select color input
-
 let colorPicker = $('#colorPicker');
-colotPicker
-
-
 
 // Select size input
 let row = $('#input_width');
