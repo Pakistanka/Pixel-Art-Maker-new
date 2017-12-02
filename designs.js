@@ -1,48 +1,21 @@
-let FIELD_SIZE_X = 20;
-let FIELD_SIZE_Y = 20;
-
 // Select color input
-
 let colorPicker = $('#colorPicker');
-colotPicker
 
-
-
-// Select size input
-let row = $('#input_width');
-  row.on('click', function(){
-    
-  });
-
-let cell = $('#input_height');
-  cell.on('click', function(){
-     
-  });
-
- 
-  let submitButton = $('#submit').on('click', function makeGrid() {
-    
+function makeGrid(){
+    // clear the table before drawing rows and columns
     let drawTable = $('#pixel_canvas');
+    drawTable.empty();
   
-  for(let i = o; i < FIELD_SIZE_X; i++){
-    let row = document.createElement('tr');
-    row.classList.add('draw-table-row');
-    row.classList.add('row-' + i);
-
-    for(let j = 0; j < FIELD_SIZE_Y; j++){
-      let cell = document.createElement('td');
-      cell.classList.add('game-table-cell');
-      cell.classList.add('row-' + i + '-' + j);
-
-      row.appendChild(cell);
+    // draw rows and columns
+    for(let i = 0; i < $('#input_height').val(); i++){
+      createRow = '<tr>';
+      for(let j = 0; j < $('#input_width').val(); j++){
+        createRow += '<td>&nbsp;</td>';
+      }
+      createRow += '</tr>';
+      drawTable.append(createRow);
     }
-    drawTable.appendChild(row);
-  }
-  document.getElementById('#sizePicker').appendChild(drawTable)
-  })
-
-
-//function makeGrid()
+}
 
 // When size is submitted by the user, call makeGrid()
 
