@@ -14,13 +14,12 @@ function makeGrid() {
     for(let j = 0; j < $('#input_width').val(); j++){
       createRow += '<td>&nbsp;</td>';
     }
-    //createRow += '<tr>';
-    drawTable.append(createRow);
+    drawTable.append(createRow); //add children elements to parent
   }
 
 $('td').click(function() {
-    let colorPicker = $("#colorPicker").val();
-    $(this).css('backgroundColor', colorPicker);
+    let colorPicker = $("#colorPicker").val(); //choose and save user's variant of color
+    $(this).css('backgroundColor', colorPicker); //add css styles
   });
 };
 
